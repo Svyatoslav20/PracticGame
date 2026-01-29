@@ -5,22 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Игра в пары</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    <div class="start">
-        <div class="divI">
-            <ul class="info">
-                <p class="name">Пары</p>
-                <p class="steps miniInfo">Шаги:</p>
-                <p class="time miniInfo">Время:</p>
+    <div class="settings">
+        <div class="settingsImg">
+            <img src="img/SetLogo.svg" alt="Настройки" class="settingsBtn">
+        </div>
+        <div class="settingsMenu">(не рабочее)
+            <p class="subinfo">Настроить задний фон:</p>
+            <ul class="">
+                1<input type="color" value="#ffb67a" class="settings__color">
+                2<input type="color" value="#ffb24e" class="settings__color">
+                3<input type="color" value="#e76c64" class="settings__color">
+                4<input type="color" value="#ffb24e" class="settings__color">
+                5<input type="color" value="#ffb67a" class="settings__color">
             </ul>
         </div>
-        <div class="divS">
-            <p class="subinfo">Настроить количество карточек (от 2 до 6)</p>
-            <input type="number" min="2" max="6" step='2' class="startInp" placeholder="По горизонтали / вертикали">
-            <button class="startBtn">НАЧАТЬ</button>
+    </div>
+    <div class="base">
+        <div class="start">
+            <div class="divI">
+                <ul class="info">
+                    <p class="name">Пары</p>
+                    <p class="steps miniInfo">Шаги: 0</p>
+                    <p class="time miniInfo">Время: 0</p>
+                </ul>
+            </div>
+            <div class="divS">
+                <p class="subinfo">Настроить количество карточек (от 2 до 6)</p>
+                <input type="number" min="2" max="6" step='2' class="startInp" placeholder="По горизонтали / вертикали">
+                <button class="startBtn button">НАЧАТЬ</button>
+            </div>
         </div>
     </div>
+    <template id="gameTableTemplate">
+        <div class="table">
+            <button class="table__button button">Рестарт</button>
+        </div>
+    </template>
+    <template id="cardTemplate">
+        <div class="card">
+            <i class="fa-solid fa-arrow-pointer"></i>
+            <i class="fa-solid fa-landmark"></i>
+        </div>
+    </template>
     <script src="script.js"></script>
+    <script src="settings.js"></script>
 </body>
 </html>
