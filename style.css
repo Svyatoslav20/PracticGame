@@ -5,7 +5,7 @@
 }
 html, body {
     height: 100%;
-    /* background:  linear-gradient(120deg, #ffb67a 0%, #ffb24e 25%,  #e76c64 50%,  #ffb24e 75%,  #ffb67a 100%); */
+    background:  linear-gradient(120deg, #ffb67a 0%, #ffb24e 25%,  #e76c64 50%,  #ffb24e 75%,  #ffb67a 100%);
     animation: bgAnimation 120s ease infinite;
     background-size: 200% 200%;
     font-family: Verdana, sans-serif;
@@ -93,7 +93,7 @@ html, body {
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: #fff;
+    background: #ffffff00;
     color: #000;
     border-radius: 40px;
     padding: 20px;
@@ -128,10 +128,12 @@ html, body {
 
 
 .settingsBtn {
-    width: 55px;
+    width: 50px;
     top: 20px;
     left: 20px;
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: waitMe 10s ease infinite;
+    user-select: none;
 }
 .settingsBtn:hover {
     rotate: 45deg;
@@ -141,8 +143,8 @@ html, body {
     position: fixed;
     margin-top: 15px;
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid rgba(255, 156, 117, 0.973);
-    background-color: rgba(255, 156, 117, 0.863);
+    border: 2px solid rgb(255, 156, 117);
+    background-color: rgba(255, 156, 117, 0.986);
     padding: 5px 3px 5px 25px;
     border-radius: 0px 20px 20px 0px;
 }
@@ -152,24 +154,55 @@ html, body {
     top: 200px;
     left: 20px;
     transform: translateX(-350px);
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(245, 245, 245, 0.123);
+    border-radius: 15px;
+    padding: 0;
+    filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
 }
 .settingsMenu.active {
     transform: translateX(0px);
+    filter: blur(0);
+    padding: 50px;
 }
 .settings__color {
     display: flex;
     flex-direction: column;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.37);
     border-radius: 20px;
     appearance: none;
     width: 200px;
     margin: 3px;
     cursor: pointer;
+    background:  linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(211, 211, 211, 0.5) 100%);
 }
 .settings__color::-webkit-color-swatch {
     border: 2px solid #ccc;
     border-radius: 20px;
+}
+#setInput {
+    width: 200px;
+    font-size: 20px;
+    margin: 20px 0 0 5px;
+    background: rgba(212, 212, 212, 0.144);
+    backdrop-filter: blur(50px);
+    outline: none;
+    border: 2px solid rgb(80, 80, 80);
+    padding: 5px;
+    border-radius: 7px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .1);
+}
+.square {
+    margin: 25px 0 0 10px;
+    padding: 10px;
+    width: 180px;
+    height: 80px;
+    border: 2.5px solid rgba(255, 255, 255, 0.219);
+    border-radius: 5px;
+    background: linear-gradient(120deg, #ffb67a 0%, #ffb24e 25%,  #e76c64 50%,  #ffb24e 75%,  #ffb67a 100%);
+    animation: bgAnimation 120s ease infinite;
 }
 @keyframes bgAnimation {
     0%, 100% {
@@ -178,4 +211,9 @@ html, body {
     50% {
         background-position: 100% 50%;
     }
+}
+@keyframes waitMe {
+    0%{rotate: 0deg;}
+    93%{rotate: 0deg}
+    100% {rotate: 180deg; filter: contrast(1)};
 }
